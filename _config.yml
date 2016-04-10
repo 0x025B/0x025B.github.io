@@ -68,6 +68,6 @@ theme: jane
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-type: git
-repository: git@github.com:0x025B/0x025B.github.io.git
-branch: master
+  type: git
+  repo: git@github.com:0x025B/0x025B.github.io.git
+  branch: master
