@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python | 0x025B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;gt; Life is short, use python一些简单的入门知识点
+
+跟matlab类似直接输入代码，回车得到执行结果&amp;gt;&amp;gt;&amp;gt; 100+200    300&amp;gt;&amp;gt;&amp;gt; print(&apos;hello,world&apos;)hello,world
+
+python程序以.py结尾windows下不能双击运行C\:&amp;gt; hello.py  hello, world
+
+输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python">
+<meta property="og:url" content="http://yoursite.com/2016/04/21/Python-0x01/index.html">
+<meta property="og:site_name" content="0x025B">
+<meta property="og:description" content="&amp;gt; Life is short, use python一些简单的入门知识点
+
+跟matlab类似直接输入代码，回车得到执行结果&amp;gt;&amp;gt;&amp;gt; 100+200    300&amp;gt;&amp;gt;&amp;gt; print(&apos;hello,world&apos;)hello,world
+
+python程序以.py结尾windows下不能双击运行C\:&amp;gt; hello.py  hello, world
+
+输">
+<meta property="og:updated_time" content="2016-09-27T01:48:11.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python">
+<meta name="twitter:description" content="&amp;gt; Life is short, use python一些简单的入门知识点
+
+跟matlab类似直接输入代码，回车得到执行结果&amp;gt;&amp;gt;&amp;gt; 100+200    300&amp;gt;&amp;gt;&amp;gt; print(&apos;hello,world&apos;)hello,world
+
+python程序以.py结尾windows下不能双击运行C\:&amp;gt; hello.py  hello, world
+
+输">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-Python-0x01" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/21/Python-0x01/" class="article-date">
+  <time datetime="2016-04-21T13:57:45.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="gt-Life-is-short-use-python"><a href="#gt-Life-is-short-use-python" class="headerlink" title="&gt; Life is short, use python"></a>&gt; Life is short, use python</h2><h2 id="一些简单的入门知识点"><a href="#一些简单的入门知识点" class="headerlink" title="一些简单的入门知识点"></a>一些简单的入门知识点</h2><hr>
+<ul>
+<li><h5 id="跟matlab类似直接输入代码，回车得到执行结果"><a href="#跟matlab类似直接输入代码，回车得到执行结果" class="headerlink" title="跟matlab类似直接输入代码，回车得到执行结果"></a>跟matlab类似直接输入代码，回车得到执行结果</h5><figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span>+<span class="number">200</span>    </div><div class="line"><span class="number">300</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'hello,world'</span>)</div><div class="line">hello,world</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="python程序以-py结尾windows下不能双击运行"><a href="#python程序以-py结尾windows下不能双击运行" class="headerlink" title="python程序以.py结尾windows下不能双击运行"></a>python程序以.py结尾windows下不能双击运行</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">C\:&gt; hello.py  </div><div class="line">hello, world</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h5><p>input()可以用来接收输入   </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>name = input()  </div><div class="line">print(<span class="string">'hello'</span>, name)</div></pre></td></tr></table></figure>
+<p>在交互命令行中也可以直接<code>&gt;&gt;&gt;name</code>输出name的值 <em>和matlab一样</em><br>提示信息可以在<code>input()</code>里输出  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>name = input(<span class="string">'please enter your name:'</span>)  </div><div class="line">print(<span class="string">'hello,'</span>, name)</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p><code>#</code>用来注释，以<code>:</code>结尾的语句之后连续缩进的语句为一个代码块<br>貌似用<font color="red">四个空格</font>缩进最稳妥o-o  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="comment">#示例  </span></div><div class="line">a = <span class="number">100</span>  </div><div class="line"><span class="keyword">if</span> a&gt;= <span class="number">0</span>:</div><div class="line">    print(a)  </div><div class="line"><span class="keyword">else</span>:  </div><div class="line">    print(-a)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h2><hr>
+<ul>
+<li><h5 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h5>Python可以处理任意大小的十进制整数，也可以使用十六进制  </li>
+<li><h5 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h5>浮点数可以用数学写法如<code>1.23</code>，<code>-9.56</code>等等，对于需要表示成科学记数法的数可以用<code>e</code>代替<code>x10</code>,如<code>1.23e9</code>，<code>12.3e-4</code>等等  </li>
+<li><h5 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h5>字符串是以<code>&quot;</code>或<code>&#39;</code>括起来的任意文本，在文本中若是需要出现<code>&#39;</code>或<code>&quot;</code>时可以用转义字符<code>\</code>标识  <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="string">'I\'m \"fine\"'</span></div><div class="line">```  </div><div class="line">所表示的字符串就是    </div><div class="line">```python</div><div class="line">I<span class="string">'m "fine"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>和其他语言一样转义字符<code>\</code>有很多作用，<code>\n</code>表示换行，<code>\t</code>表示制表符，但是Python中可以用<code>r&#39;&#39;</code>表示<code>&#39;&#39;</code>内部的字符不转义</p>
+<ul>
+<li><h5 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h5><p>布尔类型只有<code>True</code>、<code>False</code>两种值（要注意大小写），也可以用布尔运算运算出来，还可以用<code>and</code>，<code>or</code>，<code>not</code>运算  </p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span>
+<span class="keyword">True</span>
+<span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &lt; <span class="number">2</span>
+<span class="keyword">False</span>
+<span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> <span class="keyword">False</span>
+<span class="keyword">True</span>
+</code></pre>
+</li>
+<li><h5 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h5><p>空值是Python里一个特殊的值，用<code>None</code>表示</p>
+</li>
+<li><h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5>变量名必须是大小写英文、数字和<code>_</code>的组合，且以英文字母或<code>_</code>开头<br><code>=</code>表示赋值语句，可以把不同的数据类型赋值给变量，同一个变量可以被反复赋值   <pre><code class="python">a = <span class="number">123</span> <span class="comment">#a是整数</span>
+print(a)
+a = <span class="string">'ABC'</span> <span class="comment">#a变为字符串</span>
+print(b)
+</code></pre>
+</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/25/C语言/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C语言
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/0x025B" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 0x025B 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/0x025B" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

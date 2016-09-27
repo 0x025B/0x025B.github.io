@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python2 | 0x025B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="编码首先，一开始唯一的编码方式是ASCII，一个字节编码一个字符，只能编码数字、英文字母和一些字符；当汉子需要用一种方式编码时，就规定了GB2312，两个字节编码一个字符；再算上韩文、日文，若每种不同文字都有一套自己的标准，会因为编码方式不对而产生乱码。  
+因此，Unicode就出现了，Unicode用三个字节编码一个字符，囊括了所有语言的字符，这样就不会产生乱码问题。  
+UTF-8在Un">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python2">
+<meta property="og:url" content="http://yoursite.com/2016/05/19/Python-0x02/index.html">
+<meta property="og:site_name" content="0x025B">
+<meta property="og:description" content="编码首先，一开始唯一的编码方式是ASCII，一个字节编码一个字符，只能编码数字、英文字母和一些字符；当汉子需要用一种方式编码时，就规定了GB2312，两个字节编码一个字符；再算上韩文、日文，若每种不同文字都有一套自己的标准，会因为编码方式不对而产生乱码。  
+因此，Unicode就出现了，Unicode用三个字节编码一个字符，囊括了所有语言的字符，这样就不会产生乱码问题。  
+UTF-8在Un">
+<meta property="og:updated_time" content="2016-09-27T01:48:25.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python2">
+<meta name="twitter:description" content="编码首先，一开始唯一的编码方式是ASCII，一个字节编码一个字符，只能编码数字、英文字母和一些字符；当汉子需要用一种方式编码时，就规定了GB2312，两个字节编码一个字符；再算上韩文、日文，若每种不同文字都有一套自己的标准，会因为编码方式不对而产生乱码。  
+因此，Unicode就出现了，Unicode用三个字节编码一个字符，囊括了所有语言的字符，这样就不会产生乱码问题。  
+UTF-8在Un">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-Python-0x02" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/19/Python-0x02/" class="article-date">
+  <time datetime="2016-05-19T09:26:21.000Z" itemprop="datePublished">2016-05-19</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>首先，一开始唯一的编码方式是<code>ASCII</code>，一个字节编码一个字符，只能编码数字、英文字母和一些字符；当汉子需要用一种方式编码时，就规定了<code>GB2312</code>，两个字节编码一个字符；再算上韩文、日文，若每种不同文字都有一套自己的标准，会因为编码方式不对而产生乱码。  </p>
+<p>因此，<code>Unicode</code>就出现了，Unicode用三个字节编码一个字符，囊括了所有语言的字符，这样就不会产生乱码问题。  </p>
+<p><code>UTF-8</code>在<code>Unicode</code>的基础之上，用一个字节编码英文字符，通常用三个字节编码汉子字符，一些不常用的字符会被编码成最多六个字节。这在网络传输中减少了文件大小。  </p>
+<p>在python3后，字符串是用<code>Unicode</code>编码的，也就是说字符串支持多语言，比如：</p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'你好,world'</span>  
+你好,world
+</code></pre>
+<p>python提供了<code>ord()</code>函数用来获取字符的十进制编码，<code>chr()</code>函数用来把十进制编码转化为对应的字符：  </p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span>ord(<span class="string">'A'</span>)  
+<span class="number">65</span>  
+<span class="meta">&gt;&gt;&gt; </span>chr(<span class="number">65</span>)  
+<span class="string">'A'</span>
+</code></pre>
+<p>python在内存中用Unicode表示<code>str</code>，若要保存或传输，可以转换为<code>bytes</code>。用带前缀<code>b</code>表示如<code>x = b&#39;ABC&#39;</code>。<code>str</code>可以用<code>encode()</code>编码为指定的<code>bytes</code>，反过来可以用<code>decode()</code>把<code>bytes</code>转为<code>str</code>：  </p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="string">'ABC'</span>.encode(<span class="string">'ascii'</span>)  
+<span class="string">b'ABC'</span>  
+<span class="meta">&gt;&gt;&gt; </span><span class="string">b'ABC'</span>.decode(<span class="string">'ascii'</span>)  
+<span class="string">'ABC'</span>
+</code></pre>
+<p>当源代码中包含中文的时候，再保存时，最好指定保存为UTF-8编码。可以在代码开头写上以下两行：  </p>
+<pre><code class="python"><span class="comment">#!/usr/bin/env python3  </span>
+<span class="comment"># -*- coding: utf-8 -*-</span>
+</code></pre>
+<p>第一行貌似是为了告诉linux系统这是python可执行文件，windows会忽略，不过我是没试出来。  </p>
+<h2 id="第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀u输出中文print-u-39-你好-39-。"><a href="#第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀u输出中文print-u-39-你好-39-。" class="headerlink" title="第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀u输出中文print(u&#39;你好&#39;)。  "></a>第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀<code>u</code>输出中文<code>print(u&#39;你好&#39;)</code>。  </h2></li>
+<li>####</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/26/Pythonon-spyter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Pythonon爬虫
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/25/C语言/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C语言</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/0x025B" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 0x025B 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/0x025B" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

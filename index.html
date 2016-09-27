@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>0x025B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="0x025B">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="0x025B">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="0x025B">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-sth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/22/sth/">对自己这个hexo博客的一些优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/22/sth/" class="article-date">
+  <time datetime="2016-09-22T14:17:25.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>2016-09-22<br>可以看到我之前写的都是没有插图的，一是没什么必须的要求，二也是不方便，要么要放到同文件相对目录下，要么要传到空间上获取网络链接。不过图床还是迟早要有的，所以就简单弄了一下。<br>方案是Atom + 七牛云 + markdow-assistant + qiniu-uploader，这里做个总结。  </p>
+</li>
+<li><p>先注册七牛云，免费账号有10G免费空间，不能绑定未备案的域名，不能使用CDN加速，不过只做图床暂时也够用<br>注册之后在“对象储存”中添加一个空间，访问控制要选择“公开空间”<br><img src="http://odyjlyx5p.bkt.clouddn.com/3da5fd8ad46be5abe9cded1293e6ddb5.png" alt="2016092222.26"><br>我把我的空间命名为了“imgbed-atom”，然后会有一个测试域名<br><img src="http://odyjlyx5p.bkt.clouddn.com/7805c3e80eac2026cabcbac49707142d.png" alt="2016092222.40"><br>这是待会要用的。  </p>
+</li>
+<li><p>安装markdow-assistant插件和qiniu-uploader插件<br>打开Atom，按<code>Ctrl+</code>可以打开setting界面，在<code>+Install</code>中搜索以上两个插件并安装，有时候网速比较慢，可以全局代理<br>在markdow-assistant的setting中把qiniu-uploader设置为默认<br><img src="http://odyjlyx5p.bkt.clouddn.com/d5a7b2084f42f63e9cbc03617846c601.png" alt="2016092222.41"><br>在qiniu-uploader的setting中填入以下内容<br><img src="http://odyjlyx5p.bkt.clouddn.com/938e1695b43426a896e4787d299e4698.png" alt="2016092222.42"><br>AK和SK可以在七牛-“个人面板”-“密钥管理”中找到<br><img src="http://odyjlyx5p.bkt.clouddn.com/b71e65990deaa4da4eceb1f3f7c78051.png" alt="2016092222.43"><br>空间名即我刚才命名的”imgbed-atom”，域名就是刚才的”测试域名”  </p>
+</li>
+<li><p>使用<br>截图或复制网页上的图片，在正写的markdown文件中<code>Ctrl+V</code>，会跳出一个界面，填入图片名字即可<br>不过不支持本地图片复制</p>
+</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-thinks" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/21/thinks/">CentOS下安装Python3.x的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/21/thinks/" class="article-date">
+  <time datetime="2016-09-21T13:05:03.000Z" itemprop="datePublished">2016-09-21</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>腾讯云的学生优惠机型，装个linux纯当练手的，本来就是直接安装python3.5的，结果进入交互模式之后发现删除键和方向键什么的都是乱码的，那不是输错了就不能更改，不行不行，于是就搜了一下。  </li>
+<li>系统是CentOS7.0 64位，linux嘛，都带个Pyton2.7，在我这种不懂2.7的人来说（说的好像我懂3.4一样），不仅没用还特麻烦。<br>搜索到交互模式下方向键和删除键乱码，其实是因为它们被转义了，好像用Ctrl+可以用，但是怎么能忍呢。。而且还有Tab的自动补全功能  </li>
+</ul>
+<ol>
+<li>配置好yum源，不过腾讯的vps，自然默认已经配置了腾讯自己的源，所以跳过。  </li>
+<li><p>先安装环境依赖包  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">  yum install gcc zlib-devel openssl-devel -y</div><div class="line">  ```  </div><div class="line">  也可以写的完整点</div><div class="line">  ```python3</div><div class="line">  yum install -y ncurses-devel openssl openssl-devel zlib-devel gcc make glibc-devel libffi-devel glibc-static glibc-utils sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-deve</div><div class="line">  ```  </div><div class="line"></div><div class="line">3. 然后从官网下载Python3.5.1的源码包  </div><div class="line">  ```python3</div><div class="line">  wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz</div><div class="line"></div><div class="line">  #国内的源，速度块</div><div class="line">  wget http://mirrors.sohu.com/python/3.5.1/Python-3.5.1.tgz</div><div class="line">  ```  </div><div class="line">4. 解压</div><div class="line">  ```python3</div><div class="line">  tar xvf Python-3.5.1.tgz</div><div class="line">  cd Python-3.5.1</div></pre></td></tr></table></figure>
+<p>开启Python自带的readline模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">vim /Modules/Setup</div></pre></td></tr></table></figure>
+<p>把<code>readline readline.c -lreadline -ltermcap</code>前面的<code>#</code>去掉 在116行  </p>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">./configure --prefix=/usr/local/python3</div><div class="line">make &amp;&amp; make altinstall</div></pre></td></tr></table></figure>
+<p>应该已经安装成功了，可以通过<code>python3 -V</code>和<code>pip -V</code>查看版本<br>好像yum没有支持Python3,我就没有给Python3添加软连接 （挖个坑再填）</p>
+</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/16/sth/">给自己的垃圾笔记本换了块网卡</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/16/sth/" class="article-date">
+  <time datetime="2016-09-15T16:00:00.000Z" itemprop="datePublished">2016-09-16</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Pythonon-spyter" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/26/Pythonon-spyter/">Pythonon爬虫</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/26/Pythonon-spyter/" class="article-date">
+  <time datetime="2016-05-26T14:55:44.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><h4 id="list和dict"><a href="#list和dict" class="headerlink" title="list和dict"></a>list和dict</h4><code>list</code>是Python内置的一种数据类型，<code>list</code>是一种有序的集合，可以随时添加和删除其中的元素。<br><code>dict</code>是Python内置的字典，使用键-值(key-value)存储，具有极快的查找速度。  <figure class="highlight python"><table><tr><td class="code"><pre><div class="line">namelist=[]</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>namedict = [<span class="string">'Michael'</span>:<span class="number">95</span>,<span class="string">'Bob'</span>:<span class="number">75</span>,<span class="string">'Tracy'</span>:<span class="number">85</span>]  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'Michael'</span>]</div><div class="line"><span class="number">95</span></div><div class="line">```  sdf</div><div class="line">如果在字典中查一个字，`list`是把字典一页一页往后翻，直到找到想找的字，`list`越大，查的越慢；而`dict`则是先在字典的索引里找到对应的页码，然后直接翻到那一页，就找到了那个字，查找速度基本不会随着字典大小而变慢。</div><div class="line">- <span class="comment">####  </span></div><div class="line"></div><div class="line">---   </div><div class="line"> <span class="comment">### Scrapy 入门  </span></div><div class="line"></div><div class="line">- <span class="comment">#### 创建项目  </span></div><div class="line">进入代码目录中，键入以下命令</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>scrapy startproject tutorial<br>```</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python-0x02" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/19/Python-0x02/">Python2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/19/Python-0x02/" class="article-date">
+  <time datetime="2016-05-19T09:26:21.000Z" itemprop="datePublished">2016-05-19</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>首先，一开始唯一的编码方式是<code>ASCII</code>，一个字节编码一个字符，只能编码数字、英文字母和一些字符；当汉子需要用一种方式编码时，就规定了<code>GB2312</code>，两个字节编码一个字符；再算上韩文、日文，若每种不同文字都有一套自己的标准，会因为编码方式不对而产生乱码。  </p>
+<p>因此，<code>Unicode</code>就出现了，Unicode用三个字节编码一个字符，囊括了所有语言的字符，这样就不会产生乱码问题。  </p>
+<p><code>UTF-8</code>在<code>Unicode</code>的基础之上，用一个字节编码英文字符，通常用三个字节编码汉子字符，一些不常用的字符会被编码成最多六个字节。这在网络传输中减少了文件大小。  </p>
+<p>在python3后，字符串是用<code>Unicode</code>编码的，也就是说字符串支持多语言，比如：</p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> <span class="string">'你好,world'</span>  
+你好,world
+</code></pre>
+<p>python提供了<code>ord()</code>函数用来获取字符的十进制编码，<code>chr()</code>函数用来把十进制编码转化为对应的字符：  </p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span>ord(<span class="string">'A'</span>)  
+<span class="number">65</span>  
+<span class="meta">&gt;&gt;&gt; </span>chr(<span class="number">65</span>)  
+<span class="string">'A'</span>
+</code></pre>
+<p>python在内存中用Unicode表示<code>str</code>，若要保存或传输，可以转换为<code>bytes</code>。用带前缀<code>b</code>表示如<code>x = b&#39;ABC&#39;</code>。<code>str</code>可以用<code>encode()</code>编码为指定的<code>bytes</code>，反过来可以用<code>decode()</code>把<code>bytes</code>转为<code>str</code>：  </p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="string">'ABC'</span>.encode(<span class="string">'ascii'</span>)  
+<span class="string">b'ABC'</span>  
+<span class="meta">&gt;&gt;&gt; </span><span class="string">b'ABC'</span>.decode(<span class="string">'ascii'</span>)  
+<span class="string">'ABC'</span>
+</code></pre>
+<p>当源代码中包含中文的时候，再保存时，最好指定保存为UTF-8编码。可以在代码开头写上以下两行：  </p>
+<pre><code class="python"><span class="comment">#!/usr/bin/env python3  </span>
+<span class="comment"># -*- coding: utf-8 -*-</span>
+</code></pre>
+<p>第一行貌似是为了告诉linux系统这是python可执行文件，windows会忽略，不过我是没试出来。  </p>
+<h2 id="第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀u输出中文print-u-39-你好-39-。"><a href="#第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀u输出中文print-u-39-你好-39-。" class="headerlink" title="第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀u输出中文print(u&#39;你好&#39;)。  "></a>第二行是为了告诉解释器，按照UTF-8读取源码，否则中文等可能乱码，也可以用前缀<code>u</code>输出中文<code>print(u&#39;你好&#39;)</code>。  </h2></li>
+<li>####</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-C语言" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/25/C语言/">C语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/25/C语言/" class="article-date">
+  <time datetime="2016-04-25T13:54:05.000Z" itemprop="datePublished">2016-04-25</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><hr>
+<ul>
+<li><h5 id=""><a href="#" class="headerlink" title=" "></a> </h5></li>
+<li><h5 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h5></li>
+<li><h5 id="const修饰符"><a href="#const修饰符" class="headerlink" title="const修饰符"></a><code>const</code>修饰符</h5><p>const主要被用于修饰函数的参数，使用const，意味着使其只读。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/* const范例 */</div><div class="line">char *strpy(char *dest, const char *src);</div></pre></td></tr></table></figure>
+<p>上面的例子表明的只是src指针所指向的对象被定义为只读，而不是src这个变量。  </p>
+<pre><code>char *strpy(char *dest, const char *src)
+{
+ src = NULL;  //&lt;-对src赋值，编译器没有放错
+ *src = NULL;  //&lt;-编译器报错
+}
+</code></pre></li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python-0x01" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/21/Python-0x01/">Python</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/04/21/Python-0x01/" class="article-date">
+  <time datetime="2016-04-21T13:57:45.000Z" itemprop="datePublished">2016-04-21</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="gt-Life-is-short-use-python"><a href="#gt-Life-is-short-use-python" class="headerlink" title="&gt; Life is short, use python"></a>&gt; Life is short, use python</h2><h2 id="一些简单的入门知识点"><a href="#一些简单的入门知识点" class="headerlink" title="一些简单的入门知识点"></a>一些简单的入门知识点</h2><hr>
+<ul>
+<li><h5 id="跟matlab类似直接输入代码，回车得到执行结果"><a href="#跟matlab类似直接输入代码，回车得到执行结果" class="headerlink" title="跟matlab类似直接输入代码，回车得到执行结果"></a>跟matlab类似直接输入代码，回车得到执行结果</h5><figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">100</span>+<span class="number">200</span>    </div><div class="line"><span class="number">300</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'hello,world'</span>)</div><div class="line">hello,world</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="python程序以-py结尾windows下不能双击运行"><a href="#python程序以-py结尾windows下不能双击运行" class="headerlink" title="python程序以.py结尾windows下不能双击运行"></a>python程序以.py结尾windows下不能双击运行</h5><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">C\:&gt; hello.py  </div><div class="line">hello, world</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h5><p>input()可以用来接收输入   </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>name = input()  </div><div class="line">print(<span class="string">'hello'</span>, name)</div></pre></td></tr></table></figure>
+<p>在交互命令行中也可以直接<code>&gt;&gt;&gt;name</code>输出name的值 <em>和matlab一样</em><br>提示信息可以在<code>input()</code>里输出  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>name = input(<span class="string">'please enter your name:'</span>)  </div><div class="line">print(<span class="string">'hello,'</span>, name)</div></pre></td></tr></table></figure>
+</li>
+<li><h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><p><code>#</code>用来注释，以<code>:</code>结尾的语句之后连续缩进的语句为一个代码块<br>貌似用<font color="red">四个空格</font>缩进最稳妥o-o  </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="comment">#示例  </span></div><div class="line">a = <span class="number">100</span>  </div><div class="line"><span class="keyword">if</span> a&gt;= <span class="number">0</span>:</div><div class="line">    print(a)  </div><div class="line"><span class="keyword">else</span>:  </div><div class="line">    print(-a)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="数据类型和变量"><a href="#数据类型和变量" class="headerlink" title="数据类型和变量"></a>数据类型和变量</h2><hr>
+<ul>
+<li><h5 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h5>Python可以处理任意大小的十进制整数，也可以使用十六进制  </li>
+<li><h5 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h5>浮点数可以用数学写法如<code>1.23</code>，<code>-9.56</code>等等，对于需要表示成科学记数法的数可以用<code>e</code>代替<code>x10</code>,如<code>1.23e9</code>，<code>12.3e-4</code>等等  </li>
+<li><h5 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h5>字符串是以<code>&quot;</code>或<code>&#39;</code>括起来的任意文本，在文本中若是需要出现<code>&#39;</code>或<code>&quot;</code>时可以用转义字符<code>\</code>标识  <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="string">'I\'m \"fine\"'</span></div><div class="line">```  </div><div class="line">所表示的字符串就是    </div><div class="line">```python</div><div class="line">I<span class="string">'m "fine"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>和其他语言一样转义字符<code>\</code>有很多作用，<code>\n</code>表示换行，<code>\t</code>表示制表符，但是Python中可以用<code>r&#39;&#39;</code>表示<code>&#39;&#39;</code>内部的字符不转义</p>
+<ul>
+<li><h5 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h5><p>布尔类型只有<code>True</code>、<code>False</code>两种值（要注意大小写），也可以用布尔运算运算出来，还可以用<code>and</code>，<code>or</code>，<code>not</code>运算  </p>
+<pre><code class="python"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">True</span>
+<span class="keyword">True</span>
+<span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> &lt; <span class="number">2</span>
+<span class="keyword">False</span>
+<span class="meta">&gt;&gt;&gt; </span><span class="keyword">not</span> <span class="keyword">False</span>
+<span class="keyword">True</span>
+</code></pre>
+</li>
+<li><h5 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h5><p>空值是Python里一个特殊的值，用<code>None</code>表示</p>
+</li>
+<li><h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5>变量名必须是大小写英文、数字和<code>_</code>的组合，且以英文字母或<code>_</code>开头<br><code>=</code>表示赋值语句，可以把不同的数据类型赋值给变量，同一个变量可以被反复赋值   <pre><code class="python">a = <span class="number">123</span> <span class="comment">#a是整数</span>
+print(a)
+a = <span class="string">'ABC'</span> <span class="comment">#a变为字符串</span>
+print(b)
+</code></pre>
+</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/0x025B" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 0x025B 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/0x025B" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>对自己这个hexo博客的一些优化 | 0x025B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2016-09-22可以看到我之前写的都是没有插图的，一是没什么必须的要求，二也是不方便，要么要放到同文件相对目录下，要么要传到空间上获取网络链接。不过图床还是迟早要有的，所以就简单弄了一下。方案是Atom + 七牛云 + markdow-assistant + qiniu-uploader，这里做个总结。  
+
+先注册七牛云，免费账号有10G免费空间，不能绑定未备案的域名，不能使用CDN加速，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对自己这个hexo博客的一些优化">
+<meta property="og:url" content="http://yoursite.com/2016/09/22/sth/index.html">
+<meta property="og:site_name" content="0x025B">
+<meta property="og:description" content="2016-09-22可以看到我之前写的都是没有插图的，一是没什么必须的要求，二也是不方便，要么要放到同文件相对目录下，要么要传到空间上获取网络链接。不过图床还是迟早要有的，所以就简单弄了一下。方案是Atom + 七牛云 + markdow-assistant + qiniu-uploader，这里做个总结。  
+
+先注册七牛云，免费账号有10G免费空间，不能绑定未备案的域名，不能使用CDN加速，">
+<meta property="og:image" content="http://odyjlyx5p.bkt.clouddn.com/3da5fd8ad46be5abe9cded1293e6ddb5.png">
+<meta property="og:image" content="http://odyjlyx5p.bkt.clouddn.com/7805c3e80eac2026cabcbac49707142d.png">
+<meta property="og:image" content="http://odyjlyx5p.bkt.clouddn.com/d5a7b2084f42f63e9cbc03617846c601.png">
+<meta property="og:image" content="http://odyjlyx5p.bkt.clouddn.com/938e1695b43426a896e4787d299e4698.png">
+<meta property="og:image" content="http://odyjlyx5p.bkt.clouddn.com/b71e65990deaa4da4eceb1f3f7c78051.png">
+<meta property="og:updated_time" content="2016-09-27T01:46:07.706Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对自己这个hexo博客的一些优化">
+<meta name="twitter:description" content="2016-09-22可以看到我之前写的都是没有插图的，一是没什么必须的要求，二也是不方便，要么要放到同文件相对目录下，要么要传到空间上获取网络链接。不过图床还是迟早要有的，所以就简单弄了一下。方案是Atom + 七牛云 + markdow-assistant + qiniu-uploader，这里做个总结。  
+
+先注册七牛云，免费账号有10G免费空间，不能绑定未备案的域名，不能使用CDN加速，">
+<meta name="twitter:image" content="http://odyjlyx5p.bkt.clouddn.com/3da5fd8ad46be5abe9cded1293e6ddb5.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-sth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      对自己这个hexo博客的一些优化
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/22/sth/" class="article-date">
+  <time datetime="2016-09-22T14:17:25.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>2016-09-22<br>可以看到我之前写的都是没有插图的，一是没什么必须的要求，二也是不方便，要么要放到同文件相对目录下，要么要传到空间上获取网络链接。不过图床还是迟早要有的，所以就简单弄了一下。<br>方案是Atom + 七牛云 + markdow-assistant + qiniu-uploader，这里做个总结。  </p>
+</li>
+<li><p>先注册七牛云，免费账号有10G免费空间，不能绑定未备案的域名，不能使用CDN加速，不过只做图床暂时也够用<br>注册之后在“对象储存”中添加一个空间，访问控制要选择“公开空间”<br><img src="http://odyjlyx5p.bkt.clouddn.com/3da5fd8ad46be5abe9cded1293e6ddb5.png" alt="2016092222.26"><br>我把我的空间命名为了“imgbed-atom”，然后会有一个测试域名<br><img src="http://odyjlyx5p.bkt.clouddn.com/7805c3e80eac2026cabcbac49707142d.png" alt="2016092222.40"><br>这是待会要用的。  </p>
+</li>
+<li><p>安装markdow-assistant插件和qiniu-uploader插件<br>打开Atom，按<code>Ctrl+</code>可以打开setting界面，在<code>+Install</code>中搜索以上两个插件并安装，有时候网速比较慢，可以全局代理<br>在markdow-assistant的setting中把qiniu-uploader设置为默认<br><img src="http://odyjlyx5p.bkt.clouddn.com/d5a7b2084f42f63e9cbc03617846c601.png" alt="2016092222.41"><br>在qiniu-uploader的setting中填入以下内容<br><img src="http://odyjlyx5p.bkt.clouddn.com/938e1695b43426a896e4787d299e4698.png" alt="2016092222.42"><br>AK和SK可以在七牛-“个人面板”-“密钥管理”中找到<br><img src="http://odyjlyx5p.bkt.clouddn.com/b71e65990deaa4da4eceb1f3f7c78051.png" alt="2016092222.43"><br>空间名即我刚才命名的”imgbed-atom”，域名就是刚才的”测试域名”  </p>
+</li>
+<li><p>使用<br>截图或复制网页上的图片，在正写的markdown文件中<code>Ctrl+V</code>，会跳出一个界面，填入图片名字即可<br>不过不支持本地图片复制</p>
+</li>
+</ul>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/21/thinks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CentOS下安装Python3.x的问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/0x025B" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 0x025B 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/0x025B" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

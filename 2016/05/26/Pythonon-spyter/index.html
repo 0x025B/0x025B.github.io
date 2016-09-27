@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Pythonon爬虫 | 0x025B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="list和dictlist是Python内置的一种数据类型，list是一种有序的集合，可以随时添加和删除其中的元素。dict是Python内置的字典，使用键-值(key-value)存储，具有极快的查找速度。  namelist=[]&amp;gt;&amp;gt;&amp;gt; namedict = [&apos;Michael&apos;:95,&apos;Bob&apos;:75,&apos;Tracy&apos;:85]  &amp;gt;&amp;gt;&amp;gt; d[&apos;Micha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pythonon爬虫">
+<meta property="og:url" content="http://yoursite.com/2016/05/26/Pythonon-spyter/index.html">
+<meta property="og:site_name" content="0x025B">
+<meta property="og:description" content="list和dictlist是Python内置的一种数据类型，list是一种有序的集合，可以随时添加和删除其中的元素。dict是Python内置的字典，使用键-值(key-value)存储，具有极快的查找速度。  namelist=[]&amp;gt;&amp;gt;&amp;gt; namedict = [&apos;Michael&apos;:95,&apos;Bob&apos;:75,&apos;Tracy&apos;:85]  &amp;gt;&amp;gt;&amp;gt; d[&apos;Micha">
+<meta property="og:updated_time" content="2016-08-19T06:22:46.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pythonon爬虫">
+<meta name="twitter:description" content="list和dictlist是Python内置的一种数据类型，list是一种有序的集合，可以随时添加和删除其中的元素。dict是Python内置的字典，使用键-值(key-value)存储，具有极快的查找速度。  namelist=[]&amp;gt;&amp;gt;&amp;gt; namedict = [&apos;Michael&apos;:95,&apos;Bob&apos;:75,&apos;Tracy&apos;:85]  &amp;gt;&amp;gt;&amp;gt; d[&apos;Micha">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-Pythonon-spyter" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pythonon爬虫
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/05/26/Pythonon-spyter/" class="article-date">
+  <time datetime="2016-05-26T14:55:44.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><h4 id="list和dict"><a href="#list和dict" class="headerlink" title="list和dict"></a>list和dict</h4><code>list</code>是Python内置的一种数据类型，<code>list</code>是一种有序的集合，可以随时添加和删除其中的元素。<br><code>dict</code>是Python内置的字典，使用键-值(key-value)存储，具有极快的查找速度。  <figure class="highlight python"><table><tr><td class="code"><pre><div class="line">namelist=[]</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>namedict = [<span class="string">'Michael'</span>:<span class="number">95</span>,<span class="string">'Bob'</span>:<span class="number">75</span>,<span class="string">'Tracy'</span>:<span class="number">85</span>]  </div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'Michael'</span>]</div><div class="line"><span class="number">95</span></div><div class="line">```  sdf</div><div class="line">如果在字典中查一个字，`list`是把字典一页一页往后翻，直到找到想找的字，`list`越大，查的越慢；而`dict`则是先在字典的索引里找到对应的页码，然后直接翻到那一页，就找到了那个字，查找速度基本不会随着字典大小而变慢。</div><div class="line">- <span class="comment">####  </span></div><div class="line"></div><div class="line">---   </div><div class="line"> <span class="comment">### Scrapy 入门  </span></div><div class="line"></div><div class="line">- <span class="comment">#### 创建项目  </span></div><div class="line">进入代码目录中，键入以下命令</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>scrapy startproject tutorial<br>```</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/16/sth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          给自己的垃圾笔记本换了块网卡
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/19/Python-0x02/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/0x025B" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 0x025B 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/0x025B" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CentOS下安装Python3.x的问题 | 0x025B</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="腾讯云的学生优惠机型，装个linux纯当练手的，本来就是直接安装python3.5的，结果进入交互模式之后发现删除键和方向键什么的都是乱码的，那不是输错了就不能更改，不行不行，于是就搜了一下。  
+系统是CentOS7.0 64位，linux嘛，都带个Pyton2.7，在我这种不懂2.7的人来说（说的好像我懂3.4一样），不仅没用还特麻烦。搜索到交互模式下方向键和删除键乱码，其实是因为它们被转义">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS下安装Python3.x的问题">
+<meta property="og:url" content="http://yoursite.com/2016/09/21/thinks/index.html">
+<meta property="og:site_name" content="0x025B">
+<meta property="og:description" content="腾讯云的学生优惠机型，装个linux纯当练手的，本来就是直接安装python3.5的，结果进入交互模式之后发现删除键和方向键什么的都是乱码的，那不是输错了就不能更改，不行不行，于是就搜了一下。  
+系统是CentOS7.0 64位，linux嘛，都带个Pyton2.7，在我这种不懂2.7的人来说（说的好像我懂3.4一样），不仅没用还特麻烦。搜索到交互模式下方向键和删除键乱码，其实是因为它们被转义">
+<meta property="og:updated_time" content="2016-09-22T14:19:48.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CentOS下安装Python3.x的问题">
+<meta name="twitter:description" content="腾讯云的学生优惠机型，装个linux纯当练手的，本来就是直接安装python3.5的，结果进入交互模式之后发现删除键和方向键什么的都是乱码的，那不是输错了就不能更改，不行不行，于是就搜了一下。  
+系统是CentOS7.0 64位，linux嘛，都带个Pyton2.7，在我这种不懂2.7的人来说（说的好像我懂3.4一样），不仅没用还特麻烦。搜索到交互模式下方向键和删除键乱码，其实是因为它们被转义">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-thinks" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS下安装Python3.x的问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/21/thinks/" class="article-date">
+  <time datetime="2016-09-21T13:05:03.000Z" itemprop="datePublished">2016-09-21</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>腾讯云的学生优惠机型，装个linux纯当练手的，本来就是直接安装python3.5的，结果进入交互模式之后发现删除键和方向键什么的都是乱码的，那不是输错了就不能更改，不行不行，于是就搜了一下。  </li>
+<li>系统是CentOS7.0 64位，linux嘛，都带个Pyton2.7，在我这种不懂2.7的人来说（说的好像我懂3.4一样），不仅没用还特麻烦。<br>搜索到交互模式下方向键和删除键乱码，其实是因为它们被转义了，好像用Ctrl+可以用，但是怎么能忍呢。。而且还有Tab的自动补全功能  </li>
+</ul>
+<ol>
+<li>配置好yum源，不过腾讯的vps，自然默认已经配置了腾讯自己的源，所以跳过。  </li>
+<li><p>先安装环境依赖包  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">  yum install gcc zlib-devel openssl-devel -y</div><div class="line">  ```  </div><div class="line">  也可以写的完整点</div><div class="line">  ```python3</div><div class="line">  yum install -y ncurses-devel openssl openssl-devel zlib-devel gcc make glibc-devel libffi-devel glibc-static glibc-utils sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-deve</div><div class="line">  ```  </div><div class="line"></div><div class="line">3. 然后从官网下载Python3.5.1的源码包  </div><div class="line">  ```python3</div><div class="line">  wget https://www.python.org/ftp/python/3.5.1/Python-3.5.1.tgz</div><div class="line"></div><div class="line">  #国内的源，速度块</div><div class="line">  wget http://mirrors.sohu.com/python/3.5.1/Python-3.5.1.tgz</div><div class="line">  ```  </div><div class="line">4. 解压</div><div class="line">  ```python3</div><div class="line">  tar xvf Python-3.5.1.tgz</div><div class="line">  cd Python-3.5.1</div></pre></td></tr></table></figure>
+<p>开启Python自带的readline模块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">vim /Modules/Setup</div></pre></td></tr></table></figure>
+<p>把<code>readline readline.c -lreadline -ltermcap</code>前面的<code>#</code>去掉 在116行  </p>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">./configure --prefix=/usr/local/python3</div><div class="line">make &amp;&amp; make altinstall</div></pre></td></tr></table></figure>
+<p>应该已经安装成功了，可以通过<code>python3 -V</code>和<code>pip -V</code>查看版本<br>好像yum没有支持Python3,我就没有给Python3添加软连接 （挖个坑再填）</p>
+</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/22/sth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          对自己这个hexo博客的一些优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/16/sth/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">给自己的垃圾笔记本换了块网卡</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/0x025B" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 0x025B 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/0x025B" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
